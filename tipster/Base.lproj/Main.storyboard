@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="KyO-R4-RQE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="KyO-R4-RQE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -83,7 +83,13 @@
                             <outletCollection property="gestureRecognizers" destination="LdU-cJ-zeG" appends="YES" id="kkw-Ck-WGj"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Tipper" id="XV5-C6-BeY"/>
+                    <navigationItem key="navigationItem" title="Tipper" id="XV5-C6-BeY">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="N7Z-KZ-JAB">
+                            <connections>
+                                <segue destination="rny-aA-UwX" kind="push" id="3GU-NO-FoP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billField" destination="mgC-gH-n5E" id="j7z-mg-iZD"/>
                         <outlet property="tipLabel" destination="fHA-t8-X06" id="RXq-ux-bdy"/>
@@ -100,6 +106,43 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="535.5" y="137.5"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="lur-mG-R2O">
+            <objects>
+                <viewController id="rny-aA-UwX" customClass="SettingsViewController" customModule="tipster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FHR-dM-NQ9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="eAr-UP-KmV">
+                                <rect key="frame" x="262" y="96" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="setDefaultTip:" destination="rny-aA-UwX" eventType="editingChanged" id="MbX-Tx-E0H"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Default Tip %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p9f-AA-07i">
+                                <rect key="frame" x="16" y="101" width="189" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QiT-7v-fyk"/>
+                    <connections>
+                        <outlet property="defaultTipField" destination="eAr-UP-KmV" id="5Ge-c2-auz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aOx-hY-RmX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="951.5" y="137.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2ax-uZ-Exe">
